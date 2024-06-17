@@ -1,25 +1,36 @@
+let h1=document.getElementById("heading");
+let  value=0;
+console.log(h1)
 
-let addValues=document.getElementById("add").value;
-let output=document.getElementById("input");
-  console.log("output",output)
-let add=()=>{
-    let inputValues=document.getElementById("input").value;
-  
-    
-    console.log("input", inputValues)
-    let inputVal=parseInt(inputValues)+1; // parseint function to convert string to number
-    console.log("add", inputVal)
-    
-    output.value=inputVal 
-    
-}
-let reset=()=>{
-  
-     output.value="";
-}
-let subtract=()=>{
-    let inputValues=document.getElementById('input').value;
-  
-    let inputVal=parseInt(inputValues)-1;
-    output.value=inputVal
-}
+const add= document.querySelector("#add");
+const sub= document.querySelector("#subtract")
+const reset=document.querySelector("#reset")
+
+
+add.addEventListener("click",()=>{
+ 
+ value++;
+ h1.innerText=value;
+ console.log("+",value)
+
+})
+
+sub.addEventListener("click",()=>{
+    if(value>0){
+        value--;
+        h1.innerText=value;
+    }
+
+
+console.log("-",value)
+})
+
+reset.addEventListener("click",()=>{
+ value=0;
+ h1.innerText=value;
+
+})
+
+
+
+
